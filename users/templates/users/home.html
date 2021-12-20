@@ -1,0 +1,58 @@
+{% extends "users/base.html" %}
+{% block content %}
+    {% for season in seasons %}
+    <article class="media content-section">
+    <div class="media-body" style="
+    border-color: rgb(148, 234, 255);
+   
+    border-style: solid ;
+   
+    /* border-width shorthand*/
+    /* top/right/bottom/left */
+    border-width: 4em 2em 2em 2em;
+    text-align: center;
+   
+    /* top/horizontal/bottom */
+    border-width: 2em 1em 1em;
+    background-color: rgb(148, 234, 255);
+    color: rgb(148, 234, 255);
+   
+    border-radius: 5em;
+    border-radius: 50%;">
+        <div class="article-metadata">
+        <a class="mr-2" href="#">{{ season.author }}</a>
+        <small class="text-muted">{{ season.date_posted }}</small>
+        </div>
+        <h2><a class="article-title" href="#">{{ season.season_name }}</a></h2>
+    </div>
+    </article>
+    {% endfor %}
+    {% for item in items %}
+        <article class="media content-section">
+          <div class="media-body" style="
+          border-color: rgb(108, 219, 150);
+         
+          border-style: solid ;
+         
+          /* border-width shorthand*/
+          /* top/right/bottom/left */
+          border-width: 4em 2em 2em 2em;
+          text-align: center;
+         
+          /* top/horizontal/bottom */
+          border-width: 2em 1em 1em;
+          background-color: rgb(108, 219, 150);
+          color: rgb(108, 219, 150);
+         
+          border-radius: 5em;
+          border-radius: 0%;">>
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ item.author }}</a>
+              <small class="text-muted">{{ item.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ item.name }}</a></h2>
+            <p class="article-content">{{ item.about }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
