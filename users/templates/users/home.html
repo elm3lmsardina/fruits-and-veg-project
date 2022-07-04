@@ -1,21 +1,22 @@
 {% extends "users/base.html" %}
 {% block content %}
     {% for season in seasons %}
-    <div style="display: inline-block; background-color: red; height: 50px; width: 200px; border-radius: 50px; text-align: center; margin: .5rem">
-        <h2>{{ season.season_name }}</h2>
-    </div>
+    <a href="{% url 'home' %}?the_season={{season.id}}"><div style="display: inline-block; background-color: red; height: 50px; width: 200px; border-radius: 50px; text-align: center; margin: .5rem">
+      <h2>{{ season.season_name }}</h2>
+  </div></a>
     {% endfor %}
     {% for item in items %}
         <article class="media content-section">
+          <img class="rounded-circle article-img" width="24%" height="12%" src="{{ item.picture.image.url }}">
           <div class="media-body" style="
           padding-left: 3rem;
           display: flex;
           align-items: center;
-          background-color: rgb(108, 219, 150);
+          background-color: rgb(255, 255, 255);
           border: none ;
           height: 7rem;
           ">
-            <h2><a class="article-title" href="#">{{ item.name }}</a></h2>
+            <h2><a class="article-title" href="{% url 'item-detail' item.id %}">{{ item.name }}</a></h2>
           </div>
         </article>
     {% endfor %}

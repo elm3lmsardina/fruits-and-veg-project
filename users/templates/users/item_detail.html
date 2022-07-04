@@ -1,0 +1,46 @@
+{% extends "users/base.html" %}
+{% block content %}
+
+<div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img" style="
+    display: flex;
+    align-items: center;" src="{{ item.picture.image.url }}">
+    <div class="media-body">
+    </div>
+  </div>
+  <!-- FORM HERE -->
+</div>
+
+        <article class="media content-section">
+          <div class="media-body" style="
+          padding-left: 3rem;
+          display: flex;
+          align-items: center;
+          background-color: rgb(108, 219, 150);
+          border: none ;
+          height: 7rem;
+          ">
+            <h2 class="article-title">{{ item.name }}</h2>
+         </div>
+        <div>
+        <p class="article-content" style="
+        padding-left: 3rem;
+        display: flex;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border: none ;
+        height: 7rem;
+        " >{{ item.about }}</p>
+        <p class="article-content" style="
+        padding-left: 3rem;
+        display: flex;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border: none ;
+        height: 7rem;
+        " >Price : {{ item.price }}</p>         
+        </div>
+        </article>
+   
+{% endblock content %}
